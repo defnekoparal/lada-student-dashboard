@@ -158,3 +158,119 @@ button:hover {
     font-size: 1.75rem;
   }
 }
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  gap: 1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.day-column {
+  background: linear-gradient(180deg, rgba(247, 241, 255, 0.95), rgba(255, 250, 255, 0.95));
+  border: 1px solid #dfd1ff;
+  border-radius: 22px;
+  padding: 1rem;
+  min-height: 280px;
+}
+
+.day-column h3 {
+  font-family: "Playfair Display", serif;
+  color: #5a38b5;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.task {
+  background: white;
+  border: 1px solid #eadfff;
+  border-left: 5px solid #b995ff;
+  border-radius: 14px;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(115, 88, 200, 0.08);
+}
+
+.task strong {
+  display: block;
+  color: #4b3487;
+  margin-bottom: 0.25rem;
+}
+
+.task p {
+  margin: 0;
+  color: #4a4064;
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(50, 30, 90, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  z-index: 999;
+}
+
+.modal-content {
+  width: min(92vw, 430px);
+  background: white;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 18px 40px rgba(72, 38, 148, 0.22);
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 0.8rem;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  color: #4b3487;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #dbcdfd;
+  border-radius: 14px;
+  font-size: 1rem;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 1200px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
