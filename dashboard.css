@@ -7,21 +7,17 @@
 body {
   font-family: system-ui, -apple-system, sans-serif;
   background: white;
-  color: black;
+  color: #7e082a;
 }
 
 /* NAVBAR */
 .navbar {
   list-style: none;
-  margin: 0;
-  padding: 0;
-
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 
   background: white;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #7e082a;
 
   position: sticky;
   top: 0;
@@ -36,23 +32,22 @@ body {
 /* links */
 .navbar li a {
   display: block;
-  color: black;
+  color: #7e082a;
   padding: 14px 18px;
   text-decoration: none;
   font-weight: 600;
-
   transition: all 0.2s ease;
 }
 
-/* hover (matches your button style) */
+/* hover */
 .navbar li a:hover {
-  background: black;
+  background: #7e082a;
   color: white;
 }
 
 /* active */
 .navbar li a.active {
-  background: black;
+  background: #7e082a;
   color: white;
 }
 
@@ -126,7 +121,7 @@ body {
 
 /* TASK */
 .task-pill {
-  background: black;
+  background: #7e082a;
   color: white;
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
@@ -136,15 +131,16 @@ body {
 
 /* BUTTON */
 button {
-  border: 1px solid black;
+  border: 1px solid #7e082a;
   background: white;
+  color: #7e082a;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 6px;
 }
 
 button:hover {
-  background: black;
+  background: #7e082a;
   color: white;
 }
 
