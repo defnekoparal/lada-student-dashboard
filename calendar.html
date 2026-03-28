@@ -1,8 +1,37 @@
-<main class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar | AI LADA Study Dashboard</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="calendar.html" class="active">Calendar</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="planning.html">Planning</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Calendar</h1>
+    <p>Organize your month, add tasks, and keep your schedule calm.</p>
+  </header>
+
+  <main class="container">
     <section class="card">
       <div class="calendar-top">
         <h2>March 2026</h2>
-        <button id="addTaskBtn" <button id="addTaskBtn" type="button">+ Add Task</button>
+        <button id="addTaskBtn" type="button">+ Add Task</button>
       </div>
 
       <div class="month-calendar">
@@ -13,13 +42,6 @@
         <div class="day-name">Thu</div>
         <div class="day-name">Fri</div>
         <div class="day-name">Sat</div>
-
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
 
         <div class="calendar-day" data-day="1">
           <span class="date-number">1</span>
@@ -150,4 +172,57 @@
         </div>
       </div>
     </section>
+  </main>
 
+  <div class="modal hidden" id="taskModal">
+    <div class="modal-content">
+      <h2>Add a Task</h2>
+
+      <label for="taskDate">Date</label>
+      <select id="taskDate">
+        <option value="1">March 1</option>
+        <option value="2">March 2</option>
+        <option value="3">March 3</option>
+        <option value="4">March 4</option>
+        <option value="5">March 5</option>
+        <option value="6">March 6</option>
+        <option value="7">March 7</option>
+        <option value="8">March 8</option>
+        <option value="9">March 9</option>
+        <option value="10">March 10</option>
+        <option value="11">March 11</option>
+        <option value="12">March 12</option>
+        <option value="13">March 13</option>
+        <option value="14">March 14</option>
+        <option value="15">March 15</option>
+        <option value="16">March 16</option>
+        <option value="17">March 17</option>
+        <option value="18">March 18</option>
+        <option value="19">March 19</option>
+        <option value="20">March 20</option>
+        <option value="21">March 21</option>
+        <option value="22">March 22</option>
+        <option value="23">March 23</option>
+        <option value="24">March 24</option>
+        <option value="25">March 25</option>
+        <option value="26">March 26</option>
+        <option value="27">March 27</option>
+        <option value="28">March 28</option>
+        <option value="29">March 29</option>
+        <option value="30">March 30</option>
+        <option value="31">March 31</option>
+      </select>
+
+      <label for="taskText">Task</label>
+      <input type="text" id="taskText" placeholder="ex: Study chemistry chapter" />
+
+      <div class="modal-buttons">
+        <button id="saveTaskBtn" type="button">Save Task</button>
+        <button id="closeModalBtn" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
