@@ -5,43 +5,45 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: white;
-  color: black;
+  font-family: "Inter", sans-serif;
+  background: #faf9ff;
+  color: #2e2a3b;
 }
 
-/* LAYOUT */
+/* layout */
 .container {
-  width: min(95vw, 1400px);
+  width: min(95vw, 1300px);
   margin: 2rem auto;
   display: grid;
   gap: 2rem;
 }
 
-/* HEADER */
+/* header */
 .hero {
   text-align: center;
   padding: 2rem 1rem;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  font-size: 3.2rem;
+  color: #5b3fd6;
 }
 
 .hero p {
   margin-top: 0.5rem;
-  color: #555;
+  color: #6d6a7d;
 }
 
-/* CARD */
+/* cards */
 .card {
-  border: 1px solid #ddd;
+  background: white;
+  border: 1px solid #e5e2f5;
+  border-radius: 16px;
   padding: 1.5rem;
-  border-radius: 12px;
 }
 
-/* CALENDAR */
+/* calendar */
 .calendar-top {
   display: flex;
   justify-content: space-between;
@@ -58,11 +60,12 @@ body {
 .day-name {
   text-align: center;
   font-weight: 600;
+  color: #6a5fd1;
 }
 
 .calendar-day {
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border: 1px solid #e5e2f5;
+  border-radius: 12px;
   min-height: 120px;
   padding: 0.5rem;
   display: flex;
@@ -78,9 +81,9 @@ body {
   font-weight: 600;
 }
 
-/* TASK */
+/* tasks */
 .task-pill {
-  background: black;
+  background: #7c6cff;
   color: white;
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
@@ -88,30 +91,29 @@ body {
   width: fit-content;
 }
 
-/* BUTTON */
+/* buttons */
 button {
-  border: 1px solid black;
-  background: white;
+  background: #e8e4ff;
+  border: none;
   padding: 0.5rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 6px;
 }
 
 button:hover {
-  background: black;
-  color: white;
+  background: #d6d0ff;
 }
 
-/* INPUTS */
+/* inputs */
 input,
 select {
   width: 100%;
   padding: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
-/* GRID CARDS */
+/* grid */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -119,12 +121,12 @@ select {
 }
 
 .mini-card {
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   padding: 1rem;
   border-radius: 10px;
 }
 
-/* MODAL */
+/* modal */
 .modal {
   position: fixed;
   inset: 0;
@@ -137,11 +139,11 @@ select {
 .modal-content {
   background: white;
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 12px;
   width: 350px;
 }
 
-/* IMPORTANT FIX */
+/* CRITICAL */
 .hidden {
   display: none !important;
 }
