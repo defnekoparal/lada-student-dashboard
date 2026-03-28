@@ -1,7 +1,7 @@
 body {
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #f6f0ff 0%, #fcf8ff 45%, #f9f1ff 100%);
-  color: #342654;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: white;
+  color: black;
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -10,17 +10,17 @@ body {
   padding: 2rem;
 }
 
+/* HERO / WELCOME */
 .hero h1 {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(3rem, 6vw, 5rem);
-  color: #6b46d9;
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 #motivationalQuote {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #5a3fa0;
+  color: #555;
   margin-bottom: 2rem;
 }
 
@@ -33,17 +33,18 @@ body {
 }
 
 .quick-link {
-  background: linear-gradient(135deg, #c7afff, #eadfff);
-  padding: 0.8rem 1.2rem;
-  border-radius: 18px;
+  border: 1px solid black;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   text-decoration: none;
-  color: #37245f;
+  color: black;
   font-weight: 600;
-  box-shadow: 0 8px 18px rgba(130, 91, 230, 0.16);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .quick-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(130, 91, 230, 0.22);
+  background: black;
+  color: white;
+  transform: translateY(-2px);
 }
