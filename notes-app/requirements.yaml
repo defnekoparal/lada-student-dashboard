@@ -1,0 +1,21 @@
+packages:
+  "framer-motion": "For page transitions and polished UI animations"
+  "react-dropzone": "For beautiful drag and drop file uploads"
+  "react-markdown": "To render the structured results beautifully"
+  "remark-gfm": "For markdown tables and strikethrough support"
+  "date-fns": "For formatting history dates"
+  "clsx": "For conditional class name merging"
+  "tailwind-merge": "For merging tailwind classes safely"
+  "lucide-react": "For beautiful, consistent iconography"
+
+images:
+  - path: "artifacts/notes-app/public/images/empty-history.png"
+    description: "A clean, modern minimal 3D illustration of an empty open notebook or binder sitting on a clean pristine desk with soft lighting, academic and professional feel"
+    aspect_ratio: "1:1"
+  - path: "artifacts/notes-app/public/images/hero-bg.png"
+    description: "Abstract subtle geometric waves in soft cream, off-white, and pale slate blue, representing organized thoughts and clarity, very minimal and low contrast to be used as a background"
+    aspect_ratio: "16:9"
+
+notes:
+  - App relies on React Query hooks from @workspace/api-client-react
+  - Base64 encoding strips the data URI prefix before sending to the backend as requested by the schema
