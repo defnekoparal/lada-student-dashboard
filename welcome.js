@@ -33,4 +33,4 @@ function showRandomQuote() {
 // Run when page loads
 showRandomQuote();
 
-<button onclick="showRandomQuote()">New Quote</button>
+setInterval(showRandomQuote, 10000); // every 10 seconds
