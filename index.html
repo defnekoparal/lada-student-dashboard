@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Calm Study Dashboard</title>
+  <title>AI LADA Study Dashboard</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
-    <h1>AI Calm Study Dashboard</h1>
+    <h1>AI LADA Study Dashboard</h1>
     <p>
       See your schedule, stay organized, upload notes, and get calm AI-powered study help.
     </p>
@@ -41,6 +44,7 @@
 
         <div class="calendar-day" data-day="1">
           <span class="date-number">1</span>
+          <div class="task-pill">Hackathon</div>
         </div>
 
         <div class="calendar-day" data-day="2">
@@ -290,7 +294,11 @@
       </select>
 
       <label for="taskText">Task</label>
-      <input type="text" id="taskText" placeholder="ex: Study chemistry chapter" />
+      <input
+        type="text"
+        id="taskText"
+        placeholder="ex: Study chemistry chapter"
+      />
 
       <div class="modal-buttons">
         <button id="saveTaskBtn" type="button">Save Task</button>
