@@ -152,4 +152,56 @@ if (saveTaskBtn) {
     taskText.value = "";
     taskModal.classList.add("hidden");
   });
+  const timerDisplay = document.getElementById("timerDisplay");
+const startTimerBtn = document.getElementById("startTimerBtn");
+const pauseTimerBtn = document.getElementById("pauseTimerBtn");
+const resetTimerBtn = document.getElementById("resetTimerBtn");
+
+let timerInterval;
+let timeLeft = 25 * 60;
+
+function updateTimerDisplay() {
+  if (!timerDisplay) return;
+
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+
+  timerDisplay.textContent =
+    `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+}
+
+if (startTimerBtn) {
+  startTimerBtn.addEventListener("click", () => {
+    if (timerInterval) return;
+
+    timerInterval = setInterval(() => {
+      if (timeLeft > 0) {
+        timeLeft--;
+        updateTimerDisplay();
+      } else {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        alert("Pomodoro finished! Time for a break.");
+      }
+    }, 1000);
+  });
+}
+
+if (pauseTimerBtn) {
+  pauseTimerBtn.addEventListener("click", () => {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  });
+}
+
+if (resetTimerBtn) {
+  resetTimerBtn.addEventListener("click", () => {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    timeLeft = 25 * 60;
+    updateTimerDisplay();
+  });
+}
+
+updateTimerDisplay();
 }
