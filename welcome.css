@@ -1,4 +1,3 @@
-/* RESET + BASE */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,102 +5,119 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: white;
-  color: #7e082a;
-  text-align: center;
-  min-height: 100vh;
+  background: linear-gradient(180deg, #fff8fa 0%, #fffdfd 100%);
+  font-family: "Inter", sans-serif;
+  color: #3b1f2b;
+}
+
+/* NAVBAR (same as dashboard) */
+.navbar {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 3rem 2rem 2rem;
+  background: #fffafa;
+  border-bottom: 1px solid #e9cfd8;
 }
 
-/* HERO / WELCOME */
-.hero {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-#motivationalQuote {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: rgba(126, 8, 42, 0.7); /* softer red for readability */
-  margin-bottom: 2rem;
-}
-
-.quote-section {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.2rem;
-  border-bottom: 1px solid rgba(126, 8, 42, 0.2);
-}
-
-/* QUICK LINKS */
-.quick-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.quick-link {
-  border: 1px solid #7e082a;
-  background: white;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+.navbar a {
+  display: block;
+  padding: 1rem 1.3rem;
   text-decoration: none;
-  color: #7e082a;
+  color: #860038;
   font-weight: 600;
-  transition: all 0.2s ease;
 }
 
-.quick-link:hover {
-  background: #7e082a;
+.navbar a.active {
+  background: #860038;
+  color: white;
+  border-radius: 0 0 12px 12px;
+}
+
+/* MAIN LAYOUT */
+.welcome-container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* MAIN CARD */
+.welcome-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e6c8d2;
+  border-radius: 30px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(134, 0, 56, 0.08);
+}
+
+/* TITLE */
+.welcome-card h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #860038;
+  margin-bottom: 0.7rem;
+}
+
+/* QUOTE */
+.welcome-quote {
+  color: #a14d67;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* BUTTON */
+button {
+  background: linear-gradient(180deg, #fff7fa 0%, #ffeef3 100%);
+  color: #860038;
+  border: 1px solid #dba7b8;
+  border-radius: 14px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.18s ease;
+  margin-bottom: 2rem;
+}
+
+button:hover {
+  background: #860038;
+  color: white;
+}
+
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.nav-btn {
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 16px;
+  border: 1px solid #efcdd8;
+  background: linear-gradient(180deg, #fff8fa 0%, #ffffff 100%);
+  color: #860038;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #860038;
   color: white;
   transform: translateY(-2px);
 }
 
-/* OPTIONAL NAVBAR */
-.navbar {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background: white;
-  border-bottom: 1px solid #7e082a;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  margin-bottom: 2rem;
-  padding: 0;
-}
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .welcome-card h1 {
+    font-size: 2.2rem;
+  }
 
-.navbar .right {
-  margin-left: auto;
-}
-
-.navbar li a {
-  display: block;
-  color: #7e082a;
-  padding: 14px 18px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.navbar li a:hover {
-  background: #7e082a;
-  color: white;
-}
-
-.navbar li a.active {
-  background: #7e082a;
-  color: white;
+  .nav-buttons {
+    flex-direction: column;
+  }
 }
