@@ -10,6 +10,60 @@ body {
   color: black;
 }
 
+/* NAVBAR */
+.navbar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(52, 38, 84, 0.1);
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* left side */
+.navbar li {
+  float: left;
+}
+
+/* right side (Profile) */
+.navbar li.right {
+  float: right;
+}
+
+/* links */
+.navbar li a {
+  display: block;
+  color: #342654; /* your soft purple text */
+  text-align: center;
+  padding: 14px 18px;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+
+  transition: all 0.25s ease;
+}
+
+/* hover */
+.navbar li a:hover {
+  background: rgba(182, 161, 255, 0.15); /* soft lilac hover */
+  border-radius: 8px;
+}
+
+/* active */
+.navbar li a.active {
+  background: rgba(182, 161, 255, 0.25);
+  border-radius: 8px;
+}
+
 /* LAYOUT */
 .container {
   width: min(95vw, 1400px);
