@@ -1,4 +1,3 @@
-// Basic interactivity for Settings page
 document.addEventListener("DOMContentLoaded", () => {
 
   // Log out button
