@@ -20,6 +20,10 @@ body {
   border-bottom: 1px solid #e9cfd8;
 }
 
+.navbar li.logout {
+  margin-left: auto; /* pushes this item to the right */
+}
+
 .navbar li {
   display: inline-block;
 }
