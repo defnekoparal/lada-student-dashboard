@@ -20,12 +20,12 @@ body {
   padding: 15px 40px;
 } */
 
+/* Logo */
 .logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 700;
-  background-color: transparent;
+  height: 50px; /* adjust as needed */
+  width: auto;
 }
+
 .navbar {
   list-style: none;
   display: flex;
