@@ -1,0 +1,269 @@
+openapi: 3.1.0
+info:
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: notes
+    description: Notes processing operations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /notes/process-text:
+    post:
+      operationId: processNoteText
+      tags: [notes]
+      summary: Process pasted note text
+      description: Submit raw note text and get it simplified, organized, or turned into a quiz
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProcessNoteTextRequest"
+      responses:
+        "200":
+          description: Processed note result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProcessNoteResponse"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /notes/process:
+    post:
+      operationId: processNote
+      tags: [notes]
+      summary: Process a note image
+      description: Upload a note image and get it simplified, organized, or turned into a quiz
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProcessNoteRequest"
+      responses:
+        "200":
+          description: Processed note result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProcessNoteResponse"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /notes/history:
+    get:
+      operationId: getNoteHistory
+      tags: [notes]
+      summary: Get note processing history
+      description: Retrieve a list of previously processed notes
+      responses:
+        "200":
+          description: List of processed notes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NoteHistoryResponse"
+  /notes/history/{id}:
+    get:
+      operationId: getNoteById
+      tags: [notes]
+      summary: Get a specific note by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: The note details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NoteRecord"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+    delete:
+      operationId: deleteNote
+      tags: [notes]
+      summary: Delete a note by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Note deleted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessResponse"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    ProcessNoteTextRequest:
+      type: object
+      properties:
+        text:
+          type: string
+          description: The raw note text to process
+        mode:
+          type: string
+          enum: [simplify, organize, quiz]
+          description: Processing mode
+        title:
+          type: string
+          description: Optional user-provided title for the note
+      required:
+        - text
+        - mode
+    ProcessNoteRequest:
+      type: object
+      properties:
+        imageBase64:
+          type: string
+          description: Base64-encoded image data (without data URL prefix)
+        mimeType:
+          type: string
+          description: MIME type of the image (e.g. image/jpeg, image/png)
+        mode:
+          type: string
+          enum: [simplify, organize, quiz]
+          description: Processing mode
+        title:
+          type: string
+          description: Optional user-provided title for the note
+      required:
+        - imageBase64
+        - mimeType
+        - mode
+    ProcessNoteResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        mode:
+          type: string
+          enum: [simplify, organize, quiz]
+        extractedText:
+          type: string
+        result:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - title
+        - mode
+        - extractedText
+        - result
+        - createdAt
+    NoteRecord:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        mode:
+          type: string
+          enum: [simplify, organize, quiz]
+        extractedText:
+          type: string
+        result:
+          type: string
+        imageBase64:
+          type: string
+        mimeType:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - title
+        - mode
+        - extractedText
+        - result
+        - createdAt
+    NoteHistoryResponse:
+      type: object
+      properties:
+        notes:
+          type: array
+          items:
+            $ref: "#/components/schemas/NoteRecord"
+      required:
+        - notes
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
+    SuccessResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+      required:
+        - success
