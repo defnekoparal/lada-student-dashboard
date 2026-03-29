@@ -12,52 +12,45 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-/* Navbar for LADA */
-.nav {
+/* Navbar */
+.navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo left, links right */
   align-items: center;
+  background-color: #860038; /* main maroon background */
   padding: 15px 40px;
+  border-bottom: 2px solid #6b002d; /* slightly darker border for depth */
 }
 
 /* Logo */
 .logo {
-  height: 50px; /* adjust as needed */
+  height: 80px; /* make the logo bigger */
   width: auto;
 }
 
-.navbar {
+/* Nav links */
+.nav-links {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
   gap: 25px;
-  background-color: #860038; /* main maroon background */
-  padding: 15px 30px;
-  margin: 0;
-  border-bottom: 2px solid #6b002d; /* slightly darker border for depth */
 }
 
-.navbar li {
-  display: inline;
-}
-
-.navbar a {
+.nav-links li a {
   color: #fdf0f5; /* soft off-white text for contrast */
   text-decoration: none;
   font-weight: 600;
   font-family: 'Inter', sans-serif;
-  padding: 8px 15px;
+  padding: 10px 15px;
   border-radius: 8px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.navbar a:hover {
+.nav-links li a:hover {
   background-color: #a0044f; /* lighter maroon on hover */
   color: #ffffff;
 }
 
-.navbar a.active {
+.nav-links li a.active {
   background-color: #b10a5f; /* slightly brighter maroon for active link */
   color: #ffffff;
 }
@@ -171,6 +164,15 @@ body {
 @media (max-width: 768px) {
   .row {
     flex-direction: column;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    justify-content: center;
   }
 }
 
