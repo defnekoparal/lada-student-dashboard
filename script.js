@@ -294,6 +294,95 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// =========================
+// DASHBOARD INTELLIGENCE (REAL DATA)
+// =========================
+
+function getTodayDateKey() {
+  const today = new Date();
+  return today.toISOString().split("T")[0]; // YYYY-MM-DD
+}
+
+function loadTodayTasks() {
+  const todayTasksContainer = document.getElementById("todayTasks");
+  if (!todayTasksContainer) return;
+
+  const saved = JSON.parse(localStorage.getItem("calendarTasks")) || [];
+  const todayKey = getTodayDateKey();
+
+  const todayData = saved.find(day => day.date === todayKey);
+
+  if (!todayData || todayData.tasks.length === 0) {
+    todayTasksContainer.innerHTML = "<p>No tasks today 🎉</p>";
+    return;
+  }
+
+  todayTasksContainer.innerHTML = "";
+  todayData.tasks.forEach(task => {
+    const p = document.createElement("p");
+    p.textContent = "• " + task;
+    todayTasksContainer.appendChild(p);
+  });
+}
+
+// SAVE USER FOCUS
+const saveFocusBtn = document.getElementById("saveFocusBtn");
+const focusInput = document.getElementById("focusInput");
+
+if (saveFocusBtn) {
+  saveFocusBtn.addEventListener("click", () => {
+    const focus = focusInput.value.trim();
+
+    if (!focus) {
+      alert("Enter your focus first.");
+      return;
+    }
+
+    localStorage.setItem("todayFocus", focus);
+    generateSmartSuggestions();
+  });
+}
+
+// GENERATE SMART AI (LOCAL)
+function generateSmartSuggestions() {
+  const focus = localStorage.getItem("todayFocus") || "";
+  const suggestedReview = document.getElementById("suggestedReview");
+  const aiSuggestion = document.getElementById("aiSuggestion");
+
+  if (!aiSuggestion || !suggestedReview) return;
+
+  if (!focus) {
+    aiSuggestion.textContent =
+      "Set a focus to get personalized suggestions.";
+    return;
+  }
+
+  // BASIC INTELLIGENCE LOGIC
+  if (focus.toLowerCase().includes("math")) {
+    suggestedReview.textContent = "Review practice problems tonight at 7 PM.";
+    aiSuggestion.textContent =
+      "Start with your hardest math problems while your brain is fresh.";
+  } else if (focus.toLowerCase().includes("bio")) {
+    suggestedReview.textContent = "Review flashcards tomorrow.";
+    aiSuggestion.textContent =
+      "Use active recall — quiz yourself instead of rereading.";
+  } else if (focus.toLowerCase().includes("essay")) {
+    suggestedReview.textContent = "Edit your draft later today.";
+    aiSuggestion.textContent =
+      "Focus on structure first, then refine grammar.";
+  } else {
+    suggestedReview.textContent = "Do a 30-minute review session tonight.";
+    aiSuggestion.textContent =
+      "Break your work into small chunks and start now.";
+  }
+}
+
+// LOAD EVERYTHING
+document.addEventListener("DOMContentLoaded", () => {
+  loadTodayTasks();
+  generateSmartSuggestions();
+});
+
 /* 
 // =========================
 // WELCOME PAGE QUOTES
