@@ -109,22 +109,22 @@ body {
   text-align: center;
 }
 
-/* Video */
-.video-container iframe {
-  width: 100%;
-  height: 300px;
-  border-radius: 10px;
-}
-
+/* Container keeps same aspect ratio as old video */
 .video-container {
   width: 100%;
+  max-width: 800px; /* optional, same as old video width */
   aspect-ratio: 16 / 10;
+  margin: 0 auto; /* centers the GIF */
+  border-radius: 10px;
+  overflow: hidden; /* prevents overflow from rounding */
 }
 
+/* GIF styling */
 .demo-gif {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* fills the container without stretching too much */
+  display: block;
 }
 
 /* Row of 3 */
