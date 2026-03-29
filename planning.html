@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planning | AI LADA</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="planning.css"/>
+</head>
+
+<body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="welcome.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="https://74a77ef1-efae-4ff1-a48f-8236860fc5ba-00-33p5gtno19pp0.picard.replit.dev/">Notes</a></li>
+      <li><a href="planning.html" class="active">Planning</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Energy-Based Planning</h1>
+    <p>Work with your energy, not against it.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- ENERGY SELECT -->
+    <section class="card">
+      <h2>How are you feeling?</h2>
+
+      <div class="energy-options">
+        <button class="energy-btn" data-energy="tired">😴 Tired</button>
+        <button class="energy-btn" data-energy="okay">😐 Okay</button>
+        <button class="energy-btn" data-energy="focused">⚡ Focused</button>
+      </div>
+    </section>
+
+    <!-- TASK OUTPUT -->
+    <section class="card">
+      <h2>Suggested Tasks</h2>
+      <div id="taskContainer" class="task-container">
+        <p>Select your energy level to see tasks.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="planning.js"></script>
+</body>
+</html>
