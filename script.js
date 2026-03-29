@@ -183,6 +183,15 @@ if (saveTaskBtn) {
       `.calendar-day[data-day="${selectedDate}"]`
     );
 
+      const existingTasks = Array.from(
+    targetDay.querySelectorAll(".task-pill")
+  ).map(t => t.textContent);
+
+  if (existingTasks.includes(newTaskText)) {
+    alert("Task already exists for this day.");
+    return;
+  }
+
     const newTask = document.createElement("div");
     newTask.className = "task-pill";
     newTask.textContent = newTaskText;
