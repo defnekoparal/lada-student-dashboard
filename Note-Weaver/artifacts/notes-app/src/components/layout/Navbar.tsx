@@ -16,45 +16,22 @@ export function Navbar() {
         </Link>
         
         <nav className="flex items-center gap-1 sm:gap-2">
-          <a
-            href="https://defnekoparal.github.io/lada-student-dashboard/dashboard.html"
-            className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
-          >
+          <a href="https://defnekoparal.github.io/lada-student-dashboard/welcome.html" className="...">
+            🏠 <span className="hidden sm:inline">Home</span>
+          </a>
+          <a href="https://defnekoparal.github.io/lada-student-dashboard/dashboard.html" className="...">
             🎯 <span className="hidden sm:inline">Dashboard</span>
           </a>
-          <a
-            href="https://defnekoparal.github.io/lada-student-dashboard/welcome.html"
-            className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
-          >
-           <span className="hidden sm:inline">Home</span>
-          </a>
-          <a
-            href="https://defnekoparal.github.io/lada-student-dashboard/calendar.html"
-            className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
-          >
+          <a href="https://defnekoparal.github.io/lada-student-dashboard/calendar.html" className="...">
             📅 <span className="hidden sm:inline">Calendar</span>
           </a>
-          <Link
-            href="/"
-            className={cn(
-              "flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors",
-              isHome
-                ? "bg-secondary text-secondary-foreground"
-                : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
-            )}
-          >
+          <Link href="/" className={cn("...", isHome ? "bg-secondary text-secondary-foreground" : "...")}>
             📝 <span className="hidden sm:inline">Notes</span>
           </Link>
-          <a
-            href="#"
-            className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
-          >
+          <a href="#">
             📌 <span className="hidden sm:inline">Planning</span>
           </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
-          >
+          <a href="#">
             ⚙️ <span className="hidden sm:inline">Settings</span>
           </a>
         </nav>
