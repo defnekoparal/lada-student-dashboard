@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - LADA</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="lada.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="logo.png" alt="LADA Logo" class="logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="lada.html">Features</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Settings Header -->
+  <header class="header" id="header">
+    <h1>Settings</h1>
+    <h2>Customize your experience</h2>
+  </header>
+
+  <!-- Settings Sections -->
+  <section class="settings-section">
+
+    <!-- Account -->
+    <div class="settings-card">
+      <h2>Account</h2>
+      <div class="setting-item">
+        <label>Profile Name:</label>
+        <input type="text" value="RAMHACKER">
+      </div>
+      <div class="setting-item">
+        <label>Email:</label>
+        <input type="email" value="user@example.com">
+      </div>
+      <div class="setting-item">
+        <label>Password:</label>
+        <input type="password" placeholder="Change password">
+      </div>
+      <button>Update Account</button>
+    </div>
+
+    <!-- Preferences -->
+    <div class="settings-card">
+      <h2>Preferences</h2>
+      <div class="setting-item">
+        <label>Theme:</label>
+        <select>
+          <option>Light</option>
+          <option>Dark</option>
+        </select>
+      </div>
+      <div class="setting-item">
+        <label>Notifications:</label>
+        <input type="checkbox" checked> Enable notifications
+      </div>
+      <div class="setting-item">
+        <label>Language:</label>
+        <select>
+          <option>English</option>
+          <option>Spanish</option>
+          <option>French</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Privacy & Security -->
+    <div class="settings-card">
+      <h2>Privacy & Security</h2>
+      <div class="setting-item">
+        <button>Export Data</button>
+      </div>
+      <div class="setting-item">
+        <button>Delete Account</button>
+      </div>
+    </div>
+
+    <!-- Log Out -->
+    <div class="settings-card logout-card">
+      <button>🚫 Log Out</button>
+    </div>
+
+  </section>
+
+</body>
+</html>
