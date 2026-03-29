@@ -1,11 +1,8 @@
 import { Link, useRoute } from "wouter";
-import { BookOpen, History, PlusCircle, Sparkles } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
-
 export function Navbar() {
   const [isHome] = useRoute("/");
-  const [isHistory] = useRoute("/history");
-
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl transition-all">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -19,30 +16,41 @@ export function Navbar() {
         </Link>
         
         <nav className="flex items-center gap-1 sm:gap-2">
-          <Link 
+          <a
+            href="dashboard.html"
+            className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+          >
+            🎯 <span className="hidden sm:inline">Dashboard</span>
+          </a>
+          <a
+            href="calendar.html"
+            className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+          >
+            📅 <span className="hidden sm:inline">Calendar</span>
+          </a>
+          <Link
             href="/"
             className={cn(
               "flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors",
-              isHome 
-                ? "bg-secondary text-secondary-foreground" 
+              isHome
+                ? "bg-secondary text-secondary-foreground"
                 : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
             )}
           >
-            <PlusCircle className="h-4 w-4" />
-            <span className="hidden sm:inline">New Note</span>
+            📝 <span className="hidden sm:inline">Notes</span>
           </Link>
-          <Link 
-            href="/history"
-            className={cn(
-              "flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors",
-              isHistory 
-                ? "bg-secondary text-secondary-foreground" 
-                : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
-            )}
+          <a
+            href="#"
+            className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
           >
-            <History className="h-4 w-4" />
-            <span className="hidden sm:inline">History</span>
-          </Link>
+            📌 <span className="hidden sm:inline">Planning</span>
+          </a>
+          <a
+            href="#"
+            className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
+          >
+            ⚙️ <span className="hidden sm:inline">Settings</span>
+          </a>
         </nav>
       </div>
     </header>
