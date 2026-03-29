@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AI LADA Study Dashboard</title>
+
+  <link rel="icon" href="logo.png">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
@@ -11,7 +13,9 @@
   />
   <link rel="stylesheet" href="dashboard.css" />
 </head>
+
 <body>
+  <!-- NAVBAR -->
   <nav>
     <ul class="navbar">
       <li><a href="welcome.html">Home</a></li>
@@ -24,18 +28,25 @@
     </ul>
   </nav>
 
+  <!-- HERO -->
   <header class="hero">
     <h1>AI LADA Study Dashboard</h1>
     <p>
-      See your schedule, stay organized, upload notes, and get calm AI-powered study help.
+      See your schedule, stay organized, and get calm AI-powered study help.
     </p>
   </header>
 
+  <!-- MAIN -->
   <main class="container">
+
+    <!-- TOP SECTION -->
     <section class="dashboard-top-grid">
+      
+      <!-- WEEK VIEW -->
       <div class="card">
         <h2>This Week</h2>
         <div class="week-calendar">
+
           <div class="week-day">
             <h3>Mon</h3>
             <p>Calc HW</p>
@@ -77,26 +88,33 @@
             <p>Plan next week</p>
             <p>Rest</p>
           </div>
+
         </div>
       </div>
 
+      <!-- POMODORO -->
       <div class="card pomodoro-card">
         <h2>Pomodoro Timer</h2>
         <div class="timer-display" id="timerDisplay">25:00</div>
         <div class="timer-buttons">
-          <button id="startTimerBtn" type="button">Start</button>
-          <button id="pauseTimerBtn" type="button">Pause</button>
-          <button id="resetTimerBtn" type="button">Reset</button>
+          <button id="startTimerBtn">Start</button>
+          <button id="pauseTimerBtn">Pause</button>
+          <button id="resetTimerBtn">Reset</button>
         </div>
-        <p class="timer-note">Focus for 25 minutes, then take a short break.</p>
+        <p class="timer-note">Focus for 25 minutes, then take a break.</p>
       </div>
+
     </section>
 
+    <!-- RESET BUTTON -->
     <button id="resetDayBtn">Reset My Day</button>
 
+    <!-- TODAY'S FOCUS -->
     <section class="card">
       <h2>Today’s Focus</h2>
+
       <div class="dashboard-grid">
+
         <div class="mini-card">
           <h3>Top Priorities</h3>
           <p>Finish math homework</p>
@@ -110,57 +128,41 @@
           <p><strong>Recommended review:</strong> Tomorrow at 3:30 PM</p>
         </div>
 
+        <!-- ✅ AI FEATURE -->
         <div class="mini-card">
-          <h3>Motivation</h3>
-          <p>Small progress still counts.</p>
-        </div>
-      </div>
-    </section>
-    
-    <section class="card hidden" id="dashboardSection">
-      <h2>Study Dashboard Update</h2>
-      <div class="dashboard-grid">
-        <div class="mini-card">
-          <h3>New Priorities</h3>
-          <p>Review uploaded notes</p>
-          <p>Take the quick quiz</p>
-          <p>Revisit weak areas</p>
+          <h3>AI Suggestion</h3>
+          <p id="aiSuggestion">Thinking...</p>
         </div>
 
-        <div class="mini-card">
-          <h3>Quick Quiz</h3>
-          <button id="startQuizBtn" type="button">Start Quiz</button>
-        </div>
-
-        <div class="mini-card">
-          <h3>Next Step</h3>
-          <p>Your study plan updates automatically after the quiz.</p>
-        </div>
       </div>
     </section>
 
+    <!-- QUIZ SECTION -->
     <section class="card hidden" id="quizSection">
       <h2>Quick Quiz</h2>
       <p id="questionText">What was the main idea in your uploaded notes?</p>
       <div class="quiz-buttons">
-        <button class="answerBtn" type="button">Option A</button>
-        <button class="answerBtn" type="button">Option B</button>
-        <button class="answerBtn" type="button">Option C</button>
+        <button class="answerBtn">Option A</button>
+        <button class="answerBtn">Option B</button>
+        <button class="answerBtn">Option C</button>
       </div>
       <p id="quizResult"></p>
     </section>
 
+    <!-- SCHEDULE UPDATE -->
     <section class="card hidden" id="scheduleSection">
       <h2>Suggested Schedule Update</h2>
       <div class="schedule-box">
         <p><strong>Tomorrow, 3:30 PM</strong> — Review the missed concepts</p>
-        <p><strong>Thursday, 5:00 PM</strong> — Take a quick follow-up quiz</p>
-        <p><strong>Reminder:</strong> Take a short break before your next session.</p>
+        <p><strong>Thursday, 5:00 PM</strong> — Take a follow-up quiz</p>
+        <p><strong>Reminder:</strong> Take a break before your next session.</p>
       </div>
     </section>
+
   </main>
 
+  <!-- ✅ SCRIPT AT VERY BOTTOM (IMPORTANT) -->
   <script src="script.js"></script>
-  
+
 </body>
 </html>
