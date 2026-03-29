@@ -16,26 +16,26 @@ export function Navbar() {
         </Link>
         
         <nav className="flex items-center gap-1 sm:gap-2">
-          <a href="https://defnekoparal.github.io/lada-student-dashboard/welcome.html" className="...">
+          <a href="https://defnekoparal.github.io/lada-student-dashboard/welcome.html" className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground">
             🏠 <span className="hidden sm:inline">Home</span>
           </a>
-          <a href="https://defnekoparal.github.io/lada-student-dashboard/dashboard.html" className="...">
+          <a href="https://defnekoparal.github.io/lada-student-dashboard/dashboard.html" className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground">
             🎯 <span className="hidden sm:inline">Dashboard</span>
           </a>
-          <a href="https://defnekoparal.github.io/lada-student-dashboard/calendar.html" className="...">
+          <a href="https://defnekoparal.github.io/lada-student-dashboard/calendar.html" className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground">
             📅 <span className="hidden sm:inline">Calendar</span>
           </a>
-          <Link href="/" className={cn("...", isHome ? "bg-secondary text-secondary-foreground" : "...")}>
+          <Link href="/" className={cn("flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors", isHome ? "bg-secondary text-secondary-foreground" : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground")}>
             📝 <span className="hidden sm:inline">Notes</span>
           </Link>
-          <a href="https://defnekoparal.github.io/lada-student-dashboard/planning.html" className="...">
+          <a href="https://defnekoparal.github.io/lada-student-dashboard/planning.html" className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground">
             📌 <span className="hidden sm:inline">Planning</span>
           </a>
-          <a href="https://defnekoparal.github.io/lada-student-dashboard/settings.html" className="...">
+          <a href="https://defnekoparal.github.io/lada-student-dashboard/settings.html" className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground">
             ⚙️ <span className="hidden sm:inline">Settings</span>
           </a>
-            <a href="https://defnekoparal.github.io/lada-student-dashboard/login.html" className="...">
-            🚫 <span className="hidden sm:inline">Log out</span>
+          <a href="https://defnekoparal.github.io/lada-student-dashboard/login.html" className="flex items-center gap-2 px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors text-muted-foreground hover:bg-secondary/50 hover:text-foreground">
+            🚫 <span className="hidden sm:inline">Log Out</span>
           </a>
         </nav>
       </div>
