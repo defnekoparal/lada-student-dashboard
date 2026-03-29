@@ -10,24 +10,37 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* NAVBAR */
 .navbar {
   list-style: none;
   display: flex;
-  gap: 2rem;
-  padding: 1.2rem 2rem;
-  background: white;
-  border-bottom: 1px solid #ddd;
+  gap: 0;
+  padding: 0;
+  background: #fffafa;
+  border-bottom: 1px solid #e9cfd8;
+}
+
+.navbar li {
+  display: inline-block;
 }
 
 .navbar a {
+  display: block;
+  padding: 1rem 1.3rem;
   text-decoration: none;
   color: #860038;
   font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.navbar a:hover {
+  background: #f9e8ee;
 }
 
 .navbar a.active {
-  border-bottom: 2px solid #860038;
-  padding-bottom: 0.2rem;
+  background: #860038;
+  color: white;
+  border-radius: 0 0 12px 12px;
 }
 
 .hero {
