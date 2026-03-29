@@ -349,32 +349,53 @@ function generateSmartSuggestions() {
   const suggestedReview = document.getElementById("suggestedReview");
   const aiSuggestion = document.getElementById("aiSuggestion");
 
+  const saved = JSON.parse(localStorage.getItem("calendarTasks")) || [];
+  const todayKey = getTodayDateKey();
+  const todayData = saved.find(day => day.date === todayKey);
+
   if (!aiSuggestion || !suggestedReview) return;
 
+  // If no focus set
   if (!focus) {
     aiSuggestion.textContent =
-      "Set a focus to get personalized suggestions.";
+      "Set your focus above to unlock personalized AI suggestions.";
+    suggestedReview.textContent =
+      "No review scheduled yet.";
     return;
   }
 
-  // BASIC INTELLIGENCE LOGIC
-  if (focus.toLowerCase().includes("math")) {
-    suggestedReview.textContent = "Review practice problems tonight at 7 PM.";
+  const tasks = todayData ? todayData.tasks : [];
+
+  // 🧠 SMART LOGIC BASED ON TASK LOAD + FOCUS
+  if (tasks.length === 0) {
+    suggestedReview.textContent =
+      "Light day — optional 20 min review tonight.";
     aiSuggestion.textContent =
-      "Start with your hardest math problems while your brain is fresh.";
-  } else if (focus.toLowerCase().includes("bio")) {
-    suggestedReview.textContent = "Review flashcards tomorrow.";
-    aiSuggestion.textContent =
-      "Use active recall — quiz yourself instead of rereading.";
-  } else if (focus.toLowerCase().includes("essay")) {
-    suggestedReview.textContent = "Edit your draft later today.";
-    aiSuggestion.textContent =
-      "Focus on structure first, then refine grammar.";
-  } else {
-    suggestedReview.textContent = "Do a 30-minute review session tonight.";
-    aiSuggestion.textContent =
-      "Break your work into small chunks and start now.";
+      `You said you're focusing on "${focus}". Since your schedule is light, this is a great time to get ahead or organize your notes.`;
+    return;
   }
+
+  if (tasks.length <= 2) {
+    suggestedReview.textContent =
+      "Review your tasks later today for retention.";
+    aiSuggestion.textContent =
+      `Focus on ${focus}. You have a manageable workload, so aim for deep focus sessions (25–45 min).`;
+    return;
+  }
+
+  if (tasks.length <= 5) {
+    suggestedReview.textContent =
+      "Split your work into 2–3 sessions today.";
+    aiSuggestion.textContent =
+      `You have a moderate workload. Prioritize ${focus} first, then complete smaller tasks after.`;
+    return;
+  }
+
+  // HEAVY DAY
+  suggestedReview.textContent =
+    "High workload — prioritize and leave review for tomorrow.";
+  aiSuggestion.textContent =
+    `You have a heavy schedule. Focus on ${focus} first and don't try to do everything — prioritize what matters most.`;
 }
 
 // LOAD EVERYTHING
