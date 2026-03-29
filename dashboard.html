@@ -45,7 +45,7 @@
       <!-- WEEK VIEW -->
       <div class="card">
         <h2>This Week</h2>
-        <div class="week-calendar">
+        <div class="week-calendar" id="weekCalendar"></div>
 
           <div class="week-day">
             <h3>Mon</h3>
@@ -117,10 +117,16 @@
 
         <div class="mini-card">
           <h3>Top Priorities</h3>
+          <textarea id="focusInput" placeholder="Type today's priorities..."></textarea>
+          <button onclick="saveFocus()">Save</button>
+        </div>
+        
+        /* <div class="mini-card">
+          <h3>Top Priorities</h3>
           <p>Finish math homework</p>
           <p>Review biology notes</p>
           <p>Prepare for tomorrow’s quiz</p>
-        </div>
+        </div> */
 
         <div class="mini-card">
           <h3>Suggested Review</h3>
