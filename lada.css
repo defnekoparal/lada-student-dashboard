@@ -311,10 +311,10 @@ body {
 
 /* Login layout */
 .login-container {
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 120px); /* accounts for navbar + header */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  /* THIS is what centers it vertically */
 }
 
 /* Login card */
