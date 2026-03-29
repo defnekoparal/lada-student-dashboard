@@ -254,6 +254,16 @@ if (resetTimerBtn) {
 
 updateTimerDisplay();
 
+const resetBtn = document.getElementById("resetDayBtn");
+
+if (resetBtn) {
+  resetBtn.addEventListener("click", () => {
+    localStorage.clear();
+    alert("Fresh start. You've got this.");
+    location.reload();
+  });
+}
+
 /* 
 // =========================
 // WELCOME PAGE QUOTES
