@@ -217,7 +217,8 @@ body {
 
 .profile-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 14px 26px rgba(134, 0, 56, 0.1);
+  box-shadow: 0 14px 26px rgba(134, 0, 56, 0.1);]
+  min-height: 320px;
 }
 
 /* Circular image */
