@@ -265,23 +265,25 @@ if (resetBtn) {
 }
 
 // =========================
-// AI SUGGESTION (WOW FEATURE)
+// AI SUGGESTION 
 // =========================
-const suggestions = [
-  "Start with your hardest subject — your focus is strongest right now.",
-  "You have a quiz coming up — review your weakest topic for 20 minutes.",
-  "You're doing well — try a 25-minute deep focus session.",
-  "Light workload detected — great time to organize your notes.",
-  "Stay consistent — even 15 minutes of review will help today.",
-  "Focus on progress, not perfection. Start small."
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const suggestions = [
+    "Start with your hardest subject — your focus is strongest right now.",
+    "You have a quiz coming up — review your weakest topic for 20 minutes.",
+    "You're doing well — try a 25-minute deep focus session.",
+    "Light workload detected — great time to organize your notes.",
+    "Stay consistent — even 15 minutes of review will help today.",
+    "Focus on progress, not perfection. Start small."
+  ];
 
-const aiSuggestion = document.getElementById("aiSuggestion");
+  const aiSuggestion = document.getElementById("aiSuggestion");
 
-if (aiSuggestion) {
-  aiSuggestion.textContent =
-    suggestions[Math.floor(Math.random() * suggestions.length)];
-}
+  if (aiSuggestion) {
+    aiSuggestion.textContent =
+      suggestions[Math.floor(Math.random() * suggestions.length)];
+  }
+});
 
 /* 
 // =========================
